@@ -1,0 +1,50 @@
+/**
+ * @Component   Media
+ * @Package     components
+ */
+
+@require '_variables'
+
+// DESKTOP AND BIG SCREENS
+// ----------------------------------------------------------------------------
+
+@media only screen and (min-width: $mediaMinWidthDesktop)
+  .{$class-desktop}
+    display inherit !important
+
+  .{$class-tablet}
+    display none !important
+
+  .{$class-mobile}
+    display none !important
+
+
+
+// TABLET
+// ----------------------------------------------------------------------------
+
+@media only screen and (max-width: $mediaMaxWidthTablet)
+  .{$class-desktop}
+    display inherit !important
+
+  .{$class-tablet}
+    display inherit !important
+
+  .{$class-mobile}
+    display none !important
+
+
+
+// MOBILE
+// ----------------------------------------------------------------------------
+
+@media only screen and (max-width: $mediaMaxWidthMobile)
+
+  .{$class-desktop}
+    display none !important
+
+  .{$class-tablet}
+    display none !important
+
+  .{$class-mobile}
+    display inherit !important

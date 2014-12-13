@@ -1,0 +1,55 @@
+/**
+ * @Component   Flexbox (alpha)
+ * @Package     components
+ */
+
+@require '_variables'
+@import 'mixins/flex'
+
+// FLEXBOX BASE
+// ----------------------------------------------------------------------------
+
+.flex
+  display flex
+  justify-content flex-start
+  align-items flex-start
+
+  // X AXIS
+
+  &.start
+    justify-content flex-start
+
+  &.center
+    justify-content center
+
+  &.end
+    justify-content flex-end
+
+  // Y AXIS
+
+  &.top
+    align-items flex-start
+
+  &.middle
+    align-items center
+
+  &.bottom
+    align-items flex-end
+
+  &.stretch
+    align-items stretch
+
+  &.row
+    flex-direction row
+    flex-wrap wrap
+
+    &.reverse
+      flex-direction row-reverse
+
+  &.column
+    flex-direction column
+
+  for n in (1..COLUMNS_NUMBER)
+    &>.col-{n}
+      flex-grow 1
+      flex-basis (100%/12)*n

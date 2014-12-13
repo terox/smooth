@@ -1,0 +1,39 @@
+/**
+ * @Component   Containers
+ * @Package     components
+ */
+
+@require '_variables'
+
+
+
+.container
+  margin-left auto
+  margin-right auto
+  display block
+
+.container-fixed
+  @extend .container
+  max-width $container-fixed-width
+
+.container-fluid
+  @extend .container
+  width $container-fluid-width
+
+
+
+.padding-{$class-xs}
+  padding-top    $unit-xs
+  padding-bottom $unit-xs
+
+.padding-{$class-sm}
+  padding-top    $unit-sm
+  padding-bottom $unit-sm
+
+.padding-{$class-lg}
+  padding-top    $unit-lg
+  padding-bottom $unit-lg
+
+.padding-{$class-xl}
+  padding-top    $unit-xl
+  padding-bottom $unit-xl

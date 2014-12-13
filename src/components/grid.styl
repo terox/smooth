@@ -1,0 +1,56 @@
+/**
+ * @Component   Grid
+ * @Package     components
+ */
+
+@require '_variables'
+@import 'mixins/grids'
+
+// ROWS
+// ----------------------------------------------------------------------------
+
+.row
+  width FLUID_GRID_WIDTH
+  padding 0 GUTTER_LEFT 0 GUTTER_RIGHT
+  overflow hidden
+
+  &.padding-{$sm}
+    padding-top 1rem
+    padding-bottom 1rem
+
+  &.padding-{$lg}
+    padding-top 1.2rem
+    padding-bottom 1.2rem
+
+  &:not(.flex)
+    display block
+
+  &:not(.flex) > [class*="col-"]
+    make-column-behaviour()
+
+// COLUMNS
+// ----------------------------------------------------------------------------
+
+for n in (1..COLUMNS_NUMBER)
+  .col-{n}
+    make-column(n)
+
+// OFFSETS
+// ----------------------------------------------------------------------------
+
+for n in (1..COLUMNS_NUMBER_OFFSET)
+  .offset-{n}
+    margin-left FLUID_GRID_WIDTH * ((((GUTTER_WIDTH + COLUMNS_WIDTH) * n) + GUTTER_LEFT) / FIXED_GRID_WIDTH) !important
+
+// GRID MEDIA
+// ----------------------------------------------------------------------------
+
+@media only screen and (max-width: $mediaMaxWidthTablet)
+  .row
+    for n in (1..COLUMNS_NUMBER)
+      .col-{n}
+        make-column(COLUMNS_NUMBER)
+
+  for n in (1..COLUMNS_NUMBER)
+    .offset-{n}
+      margin-left 0px !important

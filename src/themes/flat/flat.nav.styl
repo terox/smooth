@@ -1,0 +1,51 @@
+@require '_flat.variables'
+
+.header
+    z-index 9999
+    position fixed
+    top 0
+    width 100%
+    background rgba(255, 255, 255, 0.1)
+
+    &.menu
+      height 65px
+
+nav
+  vertical-align baseline
+  ul
+    list-style none
+    li
+      display inline-block
+      padding 20px
+      a
+        text-decoration none
+        color white
+        font-size 1.5em
+        font-weight 400
+        padding-bottom 10px
+        &:hover
+          color $color-black
+
+  .active
+    color $color-black
+    border-bottom 3px solid $colorSecondary
+
+
+.links
+  list-style none
+  margin 0
+  padding 0
+
+  li
+    display block
+    width 100%
+    padding-top 10px
+    font-weight 800
+    a
+      color #ffffff
+      text-decoration none
+      transition: all .05s;
+
+      &:hover
+        color darkgrey
+        text-decoration underline

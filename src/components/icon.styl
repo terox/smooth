@@ -1,0 +1,49 @@
+/**
+ * @Component   Icon
+ * @Description Integrate dynamically all icon fonts in project
+ * @Package     components
+ */
+
+@require '_variables'
+
+.icon
+
+  &:before
+    display inline-block
+    font-style normal
+    font-weight normal
+    line-height 1
+    -webkit-font-smoothing antialiased
+    -moz-osx-font-smoothing grayscale
+
+  &.size
+
+    &.{$class-xs}
+      font-size 0.5em
+
+    &.{$class-sm}
+      font-size 0.8em
+
+    &.{$class-lg}
+      font-size 1.5em
+
+    &.{$class-xl}
+      font-size 5em
+
+for fontName in $fonts
+  @font-face
+    path = smooth-icon-path(fontName)
+
+    font-family fontName
+    src url(path + '.eot')
+    src: url(path + '.eot?#iefix') format('eot'), url(path + '.woff') format('woff'), url(path + '.ttf') format('truetype'), url(path + '.svg#' + fontName) format('svg')
+    font-style normal
+    font-weight normal
+
+  [class*={smooth-icon-prefix(fontName)}]
+    @extend .icon
+    font-family fontName
+
+  for name in smooth-icon-set(fontName)
+    .icon.{smooth-icon-prefix(fontName)}{name}:before
+      content: '\' + name[1]

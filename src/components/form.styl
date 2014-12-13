@@ -1,0 +1,115 @@
+/**
+ * @Component   Form
+ * @Package     components
+ */
+
+@require '_variables'
+@import 'mixins/grids'
+
+// FORM CONTROLS
+// ----------------------------------------------------------------------------
+
+input,
+textarea,
+select
+  display block
+  color $color-black
+  font-family inherit
+  font-size inherit
+  line-height inherit
+
+  &.form-control
+
+    width 100%
+    height $formInputDefaultHeight
+    padding $formInputPadding
+
+  &.size
+    &.{$class-xs}
+      font-size $xsFontUnit
+      height ($formInputDefaultHeight / 2)
+
+    &.{$class-sm}
+      font-size $smFontUnit
+      height ($formInputDefaultHeight / 1.25)
+
+    &.{$class-lg}
+      font-size $lgFontUnit
+      height ($formInputDefaultHeight * 1.25)
+
+    &.{$class-xl}
+      font-size $xlFontUnit
+      height ($formInputDefaultHeight * 2)
+
+textarea
+  &.form-control
+    height auto
+
+label
+  padding-bottom 5px
+
+
+
+
+// FORM WRAPPERS
+// ----------------------------------------------------------------------------
+
+form, .form
+
+  .horizontal
+    text-align left
+
+  .actions
+    padding-top 10px
+    text-align right
+
+  &.inline
+    display inline-block
+    width auto
+
+    >.form.group
+      width auto
+      float left
+      margin-left $formInlineControlLeftMargin
+
+      &:first-child
+        margin-left 0px
+
+  &.group
+    display block
+    overflow hidden
+    width 100%
+    padding-top 7px
+    margin 0
+
+    [class*="col-"]
+      make-column-behaviour()
+
+    label
+      max-height $formInputDefaultHeight
+      margin-bottom 15px
+
+      &.checkbox,
+      &.radio
+        display block
+        max-width 100%
+        padding-left 20px
+        margin-bottom 5px
+        font-weight normal
+
+        input[type="checkbox"],
+        input[type="radio"]
+          position absolute
+          margin-left -20px
+
+      &[class*="col-"]
+        margin-top (($formInputDefaultHeight / 2) / 3)
+        text-align right
+
+
+@media only screen and (max-width: $mediaMaxWidthMobile)
+
+  .form
+    &.inline
+      >.form.group
+        margin-left 0px

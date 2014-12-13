@@ -1,0 +1,38 @@
+/**
+ * @Component   Button
+ * @Package     components
+ */
+
+@require '_variables'
+
+// BASE STYLES
+// ----------------------------------------------------------------------------
+
+button, .btn
+  cursor pointer
+  display inline-block
+  padding 9px 18px
+
+  text-align center
+
+  &.size
+
+    &.{$class-xs}
+      padding 2px 4px
+      border-radius 3px
+      font-size $unit-xs
+
+    &.{$class-sm}
+      padding 4px 8px
+      border-radius 4px
+      font-size $unit-sm
+
+    &.{$class-lg}
+      padding 8px 16px
+      border-radius 6px
+      font-size $unit-lg
+
+    &.{$class-xl}
+      padding 16px 20px
+      border-radius 8px
+      font-size $unit-xl

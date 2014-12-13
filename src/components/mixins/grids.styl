@@ -1,0 +1,13 @@
+/**
+ * Mixin: Grid
+ *
+ */
+@import '../_variables'
+
+make-column-behaviour()
+  display inline
+  float left
+  margin 0 FLUID_GRID_WIDTH * ((GUTTER_WIDTH * 0.5) / FIXED_GRID_WIDTH)
+
+make-column(n)
+  width FLUID_GRID_WIDTH * ((((GUTTER_WIDTH + COLUMNS_WIDTH) * n) - GUTTER_WIDTH) / FIXED_GRID_WIDTH)

@@ -1,0 +1,75 @@
+/**
+ * @Component   Font
+ * @Package     components
+ */
+
+@require '_variables'
+
+
+
+// ALIGN
+// ----------------------------------------------------------------------------
+
+.align
+
+  &.center
+    text-align center
+
+  &.left
+    text-align left
+
+  &.right
+    text-align right
+
+  &.justify
+    text-align justify
+
+
+
+// SIZE
+// ----------------------------------------------------------------------------
+
+.size
+
+  &.{$class-xs}
+    font-size 0.5em
+
+  &.{$class-sm}
+    font-size 0.75em
+
+  &.{$class-lg}
+    font-size 2em
+
+  &.{$class-xl}
+    font-size 4em
+
+.lead
+  font-size 5em
+
+
+
+// BASIC COLORS
+// ----------------------------------------------------------------------------
+
+.muted
+  color $color-muted
+
+.color
+
+  &.white
+    color $color-white
+
+  &.black
+    color $color-black
+
+  &.red
+    color $color-red
+
+  &.green
+    color $color-green
+
+  &.blue
+    color $color-blue
+
+  $.yellow
+    color $color-yellow

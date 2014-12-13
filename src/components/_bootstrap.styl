@@ -1,0 +1,11 @@
+/**
+ * @Component   Bootstrap
+ * @Description Import all active components
+ * @Package     components
+ */
+
+@import '_variables'
+
+for name in $components
+  if smooth-component(name) is true
+    @import smooth-component-path(name)
