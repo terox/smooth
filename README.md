@@ -4,7 +4,7 @@
 
 **WARNING I AM TESTING AN UPDATING THIS PROJECT. NOT FOR PRODUCTION 2014-12-13**
 
-![](https://github.com/terox/smooth/tree/master/docs/images/screenshot20141213.png)
+![](https://github.com/terox/smooth/blob/master/docs/images/screenshot20141213.png)
 
 Smooth comes out of the box with the basic of any RWD framework: grids, flexbox, 
 forms... but there are some interesting features:
