@@ -52,7 +52,7 @@ function componentPath(name) {
  * @param stylus Stylus
  */
 exports.Stylus = function(stylus) {
-console.log(stylus)
+
   // Global imports
   stylus.import(__dirname + '/../components/_variables');
 
