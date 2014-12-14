@@ -10,8 +10,8 @@
 // ----------------------------------------------------------------------------
 
 .row
-  width FLUID_GRID_WIDTH
-  padding 0 GUTTER_LEFT 0 GUTTER_RIGHT
+  width $grid-fluid-width
+  padding 0 $grid-gutter-left 0 $grid-gutter-right
   overflow hidden
 
   &.padding-{$sm}
@@ -31,26 +31,26 @@
 // COLUMNS
 // ----------------------------------------------------------------------------
 
-for n in (1..COLUMNS_NUMBER)
+for n in (1..$grid-column-number)
   .col-{n}
     make-column(n)
 
 // OFFSETS
 // ----------------------------------------------------------------------------
 
-for n in (1..COLUMNS_NUMBER_OFFSET)
+for n in (1..$grid-column-number-offset)
   .offset-{n}
-    margin-left FLUID_GRID_WIDTH * ((((GUTTER_WIDTH + COLUMNS_WIDTH) * n) + GUTTER_LEFT) / FIXED_GRID_WIDTH) !important
+    margin-left $grid-fluid-width * (((($grid-gutter-width + $grid-column-width) * n) + $grid-gutter-left) / $grid-fixed-width) !important
 
 // GRID MEDIA
 // ----------------------------------------------------------------------------
 
-@media only screen and (max-width: $mediaMaxWidthTablet)
+@media only screen and (max-width: $media-max-width-tablet)
   .row
-    for n in (1..COLUMNS_NUMBER)
+    for n in (1..$grid-column-number)
       .col-{n}
-        make-column(COLUMNS_NUMBER)
+        make-column($grid-column-number)
 
-  for n in (1..COLUMNS_NUMBER)
+  for n in (1..$grid-column-number)
     .offset-{n}
       margin-left 0px !important

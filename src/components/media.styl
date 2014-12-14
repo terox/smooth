@@ -8,7 +8,7 @@
 // DESKTOP AND BIG SCREENS
 // ----------------------------------------------------------------------------
 
-@media only screen and (min-width: $mediaMinWidthDesktop)
+@media only screen and (min-width: $media-max-width-desktop)
   .{$class-desktop}
     display inherit !important
 
@@ -23,7 +23,7 @@
 // TABLET
 // ----------------------------------------------------------------------------
 
-@media only screen and (max-width: $mediaMaxWidthTablet)
+@media only screen and (max-width: $media-max-width-tablet)
   .{$class-desktop}
     display inherit !important
 
@@ -38,7 +38,7 @@
 // MOBILE
 // ----------------------------------------------------------------------------
 
-@media only screen and (max-width: $mediaMaxWidthMobile)
+@media only screen and (max-width: $media-max-width-mobile)
 
   .{$class-desktop}
     display none !important

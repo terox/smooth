@@ -49,7 +49,7 @@
   &.column
     flex-direction column
 
-  for n in (1..COLUMNS_NUMBER)
+  for n in (1..$grid-column-number)
     &>.col-{n}
       flex-grow 1
       flex-basis (100%/12)*n

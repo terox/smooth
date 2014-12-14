@@ -21,25 +21,25 @@ select
   &.form-control
 
     width 100%
-    height $formInputDefaultHeight
-    padding $formInputPadding
+    height $form-input-height
+    padding $form-input-padding
 
   &.size
     &.{$class-xs}
       font-size $xsFontUnit
-      height ($formInputDefaultHeight / 2)
+      height ($form-input-height / 2)
 
     &.{$class-sm}
       font-size $smFontUnit
-      height ($formInputDefaultHeight / 1.25)
+      height ($form-input-height / 1.25)
 
     &.{$class-lg}
       font-size $lgFontUnit
-      height ($formInputDefaultHeight * 1.25)
+      height ($form-input-height * 1.25)
 
     &.{$class-xl}
       font-size $xlFontUnit
-      height ($formInputDefaultHeight * 2)
+      height ($form-input-height * 2)
 
 textarea
   &.form-control
@@ -70,7 +70,7 @@ form, .form
     >.form.group
       width auto
       float left
-      margin-left $formInlineControlLeftMargin
+      margin-left $form-inline-margin-left
 
       &:first-child
         margin-left 0px
@@ -86,7 +86,7 @@ form, .form
       make-column-behaviour()
 
     label
-      max-height $formInputDefaultHeight
+      max-height $form-input-height
       margin-bottom 15px
 
       &.checkbox,
@@ -103,11 +103,11 @@ form, .form
           margin-left -20px
 
       &[class*="col-"]
-        margin-top (($formInputDefaultHeight / 2) / 3)
+        margin-top (($form-input-height / 2) / 3)
         text-align right
 
 
-@media only screen and (max-width: $mediaMaxWidthMobile)
+@media only screen and (max-width: $media-max-width-mobile)
 
   .form
     &.inline
