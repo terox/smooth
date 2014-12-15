@@ -15,7 +15,6 @@ module.exports = {
     build_docs     : 'docs/',
     build_examples : 'examples/',
 
-
     components     : 'src/components',
     themes         : 'src/themes',
     fonts          : 'dist/',
@@ -53,31 +52,8 @@ module.exports = {
 
   ],
 
-  // Icons bundles
   icons: [
-    /*{
-      bundle   : 'material-design',
-      fontName : 'material',
-      size     : '24px',
-      prefix   : 'md-',
-      sets     : [
-        'action',
-        'alert',
-        'av',
-        'communication',
-        'content',
-        //'device', // Some issues with double color
-        'editor',
-        'file',
-        'hardware',
-        'image',
-        'maps',
-        'navigation',
-        'notification',
-        'social',
-        'toggle'
-      ]
-    }*/
+
   ]
 
 };

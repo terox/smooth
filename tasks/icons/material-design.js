@@ -2,7 +2,35 @@ var gulp         = require('gulp')
   , replace      = require('gulp-replace')
   , _            = require('lodash')
   , iconsManager = require('../../src/middleware/icons')
-  , pathTemplate = 'node_modules/material-design-icons/{{set}}/svg/*24px.svg'
+  , pathTemplate = 'node_modules/material-design-icons/{{set}}/svg/production/*24px.svg'
+
+/**
+ * Default config
+ *
+ * @type {object}
+ */
+exports.defaultConfig = {
+  fontName : 'material',
+  size     : 24,
+  prefix   : 'md-',
+  sets     : [
+    'action',
+    'alert',
+    'av',
+    'communication',
+    'content',
+    //'device', // Some issues with double color
+    'editor',
+    'file',
+    'hardware',
+    'image',
+    'maps',
+    'navigation',
+    'notification',
+    'social',
+    'toggle'
+  ]
+};
 
 /**
  * Gulp task
@@ -19,7 +47,9 @@ exports.task = function(config) {
   });
 
   return gulp.src(paths)
-    .pipe(replace(/<path d="M0 0h24v24h-24z" fill="none"\/>/g, ''))
+    // Apperently solved in commit:
+    // https://github.com/google/material-design-icons/commit/a288bd9ffc0667026b8d156a06563cda803ed0a8
+    //.pipe(replace(/<path d="M0 0h24v24h-24z" fill="none"\/>/g, ''))
 
 };
 

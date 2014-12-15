@@ -52,24 +52,41 @@ gulp.task('icons', function() {
 
   _.forEach(config.icons, function(iconSetConfig) {
 
-    // Load module
-    module = require(__dirname + '/' + config.path.tasks + 'icons/' + iconSetConfig.bundle);
+    if(_.isUndefined(iconSetConfig.bundle)) {
+      throw 'Icon set needs a valid bundle property'
+    }
 
-    // Add streams
-    streams.push(
-      module
-        .task(iconSetConfig)
-        .pipe(iconfont({
-          fontHeight       : iconSetConfig.size,
-          //normalize        : true,
-          fontName         : iconSetConfig.fontName,
-          fontPath         : 'fonts/', // FIXME
-          prefix           : iconSetConfig.prefix,
-          appendCodepoints : false
-        }))
-        .on('codepoints', module.codepoints)
-        .pipe(gulp.dest(config.path.target + config.path.build_fonts))
-    );
+    try {
+
+      // Load module
+      module = require(__dirname + '/' + config.path.tasks + 'icons/' + iconSetConfig.bundle);
+
+      // Override default configuration
+      iconSetConfig = _.merge(module.defaultConfig, iconSetConfig);
+
+      // Add streams
+      streams.push(
+        module
+          .task(iconSetConfig)
+          .pipe(iconfont({
+            fontHeight       : iconSetConfig.size,
+            //normalize        : true,
+            fontName         : iconSetConfig.fontName,
+            fontPath         : 'fonts/', // FIXME
+            prefix           : iconSetConfig.prefix,
+            appendCodepoints : false
+          }))
+          .on('codepoints', module.codepoints)
+          .pipe(gulp.dest(config.path.target + config.path.build_fonts))
+      );
+
+    } catch(exception) {
+
+      if('MODULE_NOT_FOUND' === exception.code) {
+
+      }
+
+    }
 
   });
 

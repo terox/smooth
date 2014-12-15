@@ -3,6 +3,17 @@ var gulp         = require('gulp')
   , iconsManager = require('../../src/middleware/icons')
 
 /**
+ * Default config
+ *
+ * @type {object}
+ */
+exports.defaultConfig = {
+  fontName : 'custom',
+  size     : 24,
+  prefix   : 'sm-'
+};
+
+/**
  * Gulp task
  *
  * @param config Icon bundle configuration
