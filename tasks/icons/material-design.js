@@ -1,7 +1,7 @@
 var gulp         = require('gulp')
   , replace      = require('gulp-replace')
   , _            = require('lodash')
-  , iconsManager = require('../../src/extensions/icons')
+  , iconsManager = require('../../src/middleware/icons')
   , pathTemplate = 'node_modules/material-design-icons/{{set}}/svg/*24px.svg'
 
 /**
