@@ -7,7 +7,7 @@
 make-column-behaviour()
   display inline
   float left
-  margin 0 FLUID_GRID_WIDTH * ((GUTTER_WIDTH * 0.5) / FIXED_GRID_WIDTH)
+  margin 0 $grid-fluid-width * (($grid-gutter-width * 0.5) / $grid-fixed-width)
 
 make-column(n)
-  width FLUID_GRID_WIDTH * ((((GUTTER_WIDTH + COLUMNS_WIDTH) * n) - GUTTER_WIDTH) / FIXED_GRID_WIDTH)
+  width $grid-fluid-width * (((($grid-gutter-width + $grid-column-width) * n) - $grid-gutter-width) / $grid-fixed-width)
