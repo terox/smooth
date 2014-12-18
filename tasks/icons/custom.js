@@ -10,7 +10,8 @@ var gulp         = require('gulp')
 exports.defaultConfig = {
   fontName : 'custom',
   size     : 24,
-  prefix   : 'sm-'
+  prefix   : 'sm-',
+  sets     : []
 };
 
 /**
@@ -34,14 +35,11 @@ exports.task = function(config) {
 exports.codepoints = function(codepoints, config) {
 
   var icons = {}
-    , regex = new RegExp('ic_(.+)_([0-9x]+px)$', 'i')
-    , matchs
     , iconName
 
   _.forEach(codepoints, function(object) {
 
-    //matchs   = regex.exec(object.name);
-    iconName = object.name.replace(/.svg/gi, '');
+    iconName = object.name.replace(/_/gi, '-');
 
     icons[iconName] = object.codepoint.toString(16);
   });
