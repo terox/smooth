@@ -6,6 +6,7 @@
   "license": "MIT",
   "main": "gulpfile.js",
   "dependencies": {
+    "change-case": "^2.1.5",
     "commander": "^2.5.0",
     "gulp": "^3.8.5",
     "gulp-clean": "^0.3.1",

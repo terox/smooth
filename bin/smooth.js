@@ -2,9 +2,11 @@
 
 var program      = require('commander')
   , _            = require('lodash')
+  , changeCase   = require('change-case')
   , pkg          = require('../package.json')
   , smooth       = require('../lib')
   , customConfig = {}
+  , cmd
 
 
 
@@ -32,6 +34,7 @@ try {
 // =============================================================================
 
 // $ smooth theme [action] [name] --dest <destination>
+
 program
   .command('theme [action] [name]')
   .description('Theme actions')
@@ -47,24 +50,46 @@ program
     smooth.theme[action](customConfig, name, dest);
   });
 
-// $ smooth build --dest <destination>
-program
-  .command('build')
-  .description('Build package')
-  .option('-d, --dest <destionation>')
-  .action(function(options) {
 
-    customConfig = _.merge(customConfig, {
-      compress: true,
-      path : {
-        target: options.dest
-      }
-    });
+// $ smooth build [--dest <destination>] [--icon-*]
 
-    smooth.build.build(customConfig)
+cmd = program.command('build');
+cmd.description('Build package');
+cmd.option('-d, --dest <destionation>');
+
+smooth.iconSets.forEach(function(setName) {
+  cmd.option('--' + smooth.cmdIncludeIconSetPrefix + '-' + setName)
+});
+
+cmd.action(function(options, icon) {
+
+  var icons      = []
+    , normalized = '';
+
+  smooth.iconSets.forEach(function(setName) {
+
+    normalized = changeCase.camelCase(smooth.cmdIncludeIconSetPrefix + ' ' + setName);
+
+    if(true === options[normalized]) {
+      icons.push({ bundle: setName })
+    }
+
   });
 
+  customConfig = _.merge(customConfig, {
+    compress: true,
+    path : {
+      target: options.dest
+    },
+    icons: icons
+  });
+
+  smooth.build.build(customConfig)
+});
+
+
 // $ smooth watch
+
 program
   .command('watch')
   .description('Develop and testing')
@@ -72,7 +97,9 @@ program
     smooth.build.watch(customConfig)
   });
 
+
 // $ smooth help
+
 program
   .command('help')
   .description('Displays verbose help')

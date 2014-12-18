@@ -23,5 +23,12 @@ smooth watch
 
 Build the project ready to use in production:
 ```
-smooth build
+smooth build [-d, --dest <destination>]
 ```
+
+**Tip:** you can compile icons set included in Smooth adding 
+--icon-[icon-module-name]. For example:
+```
+smooth build --icon-material-design
+```
+Note that use this options overrides config in `config.json`
