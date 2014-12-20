@@ -4,7 +4,7 @@
   "description": "",
   "author": "David Pérez Terol <davidtxnet@gmail.com>",
   "license": "MIT",
-  "main": "gulpfile.js",
+  "main": "./lib/index.js",
   "dependencies": {
     "change-case": "^2.1.5",
     "commander": "^2.5.0",
