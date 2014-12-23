@@ -3,8 +3,8 @@
 var program      = require('commander')
   , _            = require('lodash')
   , changeCase   = require('change-case')
-  , pkg          = require('../package.json')
-  , smooth       = require('../lib')
+  , pkg          = require('./../package.json')
+  , smooth       = require('./../lib')
   , customConfig = {}
   , cmd
 
