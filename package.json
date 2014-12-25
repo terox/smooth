@@ -23,9 +23,9 @@
     "lodash": "^2.4.1",
     "material-design-icons": "^1.0.0",
     "merge-stream": "^0.1.6",
-    "ncp": "^1.0.1",
     "normalize.css": "^3.0.2",
-    "stylus-normalize": "^3.0.3"
+    "stylus-normalize": "^3.0.3",
+    "wrench": "^1.5.8"
   },
   "devDependencies": {
     "gulp-twig": "https://github.com/terox/gulp-twig/tarball/a614e909b291ae272113fccd6ea0ac9cb5b88c9c",
