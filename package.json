@@ -6,6 +6,7 @@
   "license": "MIT",
   "main": "./lib/index.js",
   "dependencies": {
+    "bluebird": "^2.4.2",
     "change-case": "^2.1.5",
     "commander": "^2.5.0",
     "gulp": "^3.8.5",

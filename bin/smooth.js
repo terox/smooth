@@ -47,7 +47,24 @@ program
       ? process.cwd() + '/themes/' + name
       : process.cwd() + '/' + options.dest
 
-    smooth.theme[action](customConfig, name, dest);
+    console.log('Forking...');
+
+    smooth
+      .theme[action](customConfig, name, dest)
+      .then(function() {
+
+        console.log('Forked successfully in: ' + dest);
+      })
+      .catch(function(errorMsg){
+
+        console.log(errorMsg)
+      })
+      .finally(function() {
+
+        console.log('Done.')
+      })
+    ;
+
   });
 
 
