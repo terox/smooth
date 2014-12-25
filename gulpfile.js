@@ -31,11 +31,11 @@ var filename = config.name + (config.compress ? config.name + '.min.css' : '.css
 var source = {
 
   foundation: [
-    config.path.components + '/_bootstrap.styl'
+    __dirname + '/' + config.path.components + '/_bootstrap.styl'
   ],
 
   theme: [
-    config.path.themes + '/' + config.theme + '/_bootstrap.styl'
+    __dirname + '/' + config.path.themes + '/' + config.theme + '/_bootstrap.styl'
   ]
 };
 
