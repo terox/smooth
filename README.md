@@ -1,4 +1,6 @@
 # Smooth
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/terox/smooth?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 > Small and customizable responsive front-end framework for fast mobile and
 > desktop websites development.
 
